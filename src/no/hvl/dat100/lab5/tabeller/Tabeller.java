@@ -5,7 +5,7 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		//throw new UnsupportedOperationException("skrivUt ikke implementert");
+		// throw new UnsupportedOperationException("skrivUt ikke implementert");
 		System.out.print("[ ");
 		for (int tall : tabell) {
 			System.out.print(tall + " ");
@@ -17,7 +17,7 @@ public class Tabeller {
 	// b)
 	public static String tilStreng(int[] tabell) {
 
-		//throw new UnsupportedOperationException("tilStreng ikke implementert");
+		// throw new UnsupportedOperationException("tilStreng ikke implementert");
 		StringBuilder out = new StringBuilder();
 		out.append("[");
 		for (int tall : tabell) {
@@ -35,9 +35,9 @@ public class Tabeller {
 	// c)
 	public static int summer(int[] tabell) {
 
-		//throw new UnsupportedOperationException("summer ikke implementert");
+		// throw new UnsupportedOperationException("summer ikke implementert");
 		int sum = 0;
-		for (int tall: tabell) {
+		for (int tall : tabell) {
 			sum += tall;
 		}
 		/*
@@ -58,7 +58,7 @@ public class Tabeller {
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
-		//throw new UnsupportedOperationException("finnesTall ikke implementert");
+		// throw new UnsupportedOperationException("finnesTall ikke implementert");
 		// brukte koden fra JP5 OppgaveG
 		int i = 0;
 		while (i < tabell.length) {
@@ -83,7 +83,7 @@ public class Tabeller {
 
 		// TODO
 		throw new UnsupportedOperationException("reverser ikke implementert");
-		
+
 	}
 
 	// g)

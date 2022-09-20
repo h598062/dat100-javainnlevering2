@@ -18,12 +18,12 @@ class TabellerEnhetsTester {
 	@BeforeEach
 	public void initEach() {
 
-		tabell1 = new int[3];
+		tabell1    = new int[3];
 		tabell1[0] = 1;
 		tabell1[1] = 4;
 		tabell1[2] = 6;
 
-		tabell2 = new int[1];
+		tabell2    = new int[1];
 		tabell2[0] = 1;
 
 		tabell3 = new int[0];
@@ -78,7 +78,7 @@ class TabellerEnhetsTester {
 	@Test
 	void testreverser() {
 
-		int[] tabell = { 6, 4, 1 };
+		int[] tabell = {6, 4, 1};
 
 		int[] reversert1 = Tabeller.reverser(tabell1);
 		int[] reversert2 = Tabeller.reverser(tabell2);
@@ -86,10 +86,10 @@ class TabellerEnhetsTester {
 
 		assertFalse(tabell1 == reversert1); // reverse must allocate new array
 		assertArrayEquals(tabell, reversert1);
-		
+
 		assertFalse(tabell2 == reversert2);
 		assertArrayEquals(tabell2, reversert2);
-		
+
 		assertFalse(tabell1 == reversert1);
 		assertArrayEquals(tabell3, reversert3);
 	}
@@ -97,7 +97,7 @@ class TabellerEnhetsTester {
 	@Test
 	void erSortert() {
 
-		int[] tabell = { 6, 4, 1 };
+		int[] tabell = {6, 4, 1};
 
 		assertTrue(Tabeller.erSortert(tabell1));
 		assertTrue(Tabeller.erSortert(tabell2));
@@ -109,7 +109,7 @@ class TabellerEnhetsTester {
 	@Test
 	void testsettSammen() {
 
-		int[] tabell = { 1, 1, 4, 6 };
+		int[] tabell = {1, 1, 4, 6};
 
 		assertArrayEquals(tabell, Tabeller.settSammen(tabell2, tabell1));
 		assertArrayEquals(tabell1, Tabeller.settSammen(tabell3, tabell1));
