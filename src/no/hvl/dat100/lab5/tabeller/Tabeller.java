@@ -5,31 +5,69 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("skrivUt ikke implementert");
+		//throw new UnsupportedOperationException("skrivUt ikke implementert");
+		System.out.print("[ ");
+		for (int tall : tabell) {
+			System.out.print(tall + " ");
+		}
+		System.out.println("]");
 
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("tilStreng ikke implementert");
-		
+		//throw new UnsupportedOperationException("tilStreng ikke implementert");
+		StringBuilder out = new StringBuilder();
+		out.append("[");
+		for (int tall : tabell) {
+			out.append(tall)
+			   .append(",");
+		}
+		// må fjerne siste ,
+		if (out.charAt(out.length() - 1) == ',') {
+			out.deleteCharAt(out.length() - 1);
+		}
+		out.append("]");
+		return out.toString();
 	}
 
 	// c)
 	public static int summer(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("summer ikke implementert");
+		//throw new UnsupportedOperationException("summer ikke implementert");
+		int sum = 0;
+		for (int tall: tabell) {
+			sum += tall;
+		}
+		/*
+		for (int i = 0; i < tabell.length; i++) {
+			sum+=tabell[i];
+		}*/
+		/*
+		int i = 0;
+		while (i < tabell.length) {
+			sum += tabell[i];
+			i++;
+		}*/
+
+		return sum;
+
 	}
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("finnesTall ikke implementert");
+		//throw new UnsupportedOperationException("finnesTall ikke implementert");
+		// brukte koden fra JP5 OppgaveG
+		int i = 0;
+		while (i < tabell.length) {
+			if (tabell[i] == tall) {
+				return true;
+			}
+			i++;
+		}
+		return false;
 	}
 
 	// e)
