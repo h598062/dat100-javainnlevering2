@@ -1,6 +1,14 @@
 package no.hvl.dat100.lab5.tabeller;
 
+import java.util.Arrays;
+
 public class Tabeller {
+
+	public static void main(String[] args) {
+		int[] tabell = {1, 3, 5, 8};
+		System.out.println(Arrays.toString(tabell));
+		System.out.println(Arrays.toString(reverser(tabell)));
+	}
 
 	// a)
 	public static void skrivUt(int[] tabell) {
@@ -81,9 +89,17 @@ public class Tabeller {
 	// f)
 	public static int[] reverser(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("reverser ikke implementert");
+		// [1, 3, 5, 8]
+		// [8, 5, 3, 1]
 
+		int[] nyTab = new int[tabell.length];
+		int j = tabell.length - 1;
+		for (int i = 0; i < tabell.length; i++) {
+			nyTab[i] = tabell[j];
+			j--;
+		}
+
+		return nyTab;
 	}
 
 	// g)
