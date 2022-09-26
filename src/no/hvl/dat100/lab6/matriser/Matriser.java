@@ -13,8 +13,17 @@ public class Matriser {
 	public static String tilStreng(int[][] matrise) {
 
 		// TODO
-		throw new UnsupportedOperationException("tilStreng ikke implementert");
-		
+		// throw new UnsupportedOperationException("tilStreng ikke implementert");
+		StringBuilder out = new StringBuilder();
+		for (int[] tabell : matrise) {
+			for (int tall : tabell) {
+				out.append(tall);
+				out.append(" ");
+;			}
+			out.append("\n");
+		}
+		System.out.println(out);
+		return out.toString();
 	}
 
 	// c)
