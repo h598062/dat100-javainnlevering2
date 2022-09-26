@@ -82,7 +82,16 @@ public class Tabeller {
 	public static int posisjonTall(int[] tabell, int tall) {
 
 		// TODO
-		throw new UnsupportedOperationException("posisjonTall ikke implementert");
+		// throw new UnsupportedOperationException("posisjonTall ikke implementert");
+		
+		int j = -1;
+		for (int i = 0; i < tabell.length ; i++) {
+			if (tall == tabell[i]) {
+				j = i;
+			} 
+				
+		}
+		return j;
 
 	}
 
