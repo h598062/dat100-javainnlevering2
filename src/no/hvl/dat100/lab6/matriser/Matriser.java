@@ -8,18 +8,7 @@ public class Matriser {
 		int[][] arr = new int[10][20];
         arr[0][0] = 1;
         
-        System.out.println("-------------------------------");
-
-		for (int[] rad : arr) {
-			
-			for (int i : rad) {
-				System.out.print(i + " ");
-			}
-			
-			System.out.println();
-		}
-
-		System.out.println("-------------------------------");
+        skrivUt(arr);
 	}
 	
 	// a)
