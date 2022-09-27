@@ -21,14 +21,14 @@ public class Matriser {
 		skrivUt(matrise8);
 		skrivUt(speile(matrise8));
 
-		int[][] a       = {{1, 2, 3},
-		                   {4, 5, 6},
-		                   {7, 8, 9}};
-		int[][] speilet = {{1, 4, 7},
-		                   {2, 5, 8},
-		                   {3, 6, 9}};
+		int[][] a = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		int[][] speilet = {{1, 4, 7}, {2, 5, 8}, {3, 6, 9}};
+		int[][] b = {{10, 11, 12}, {13, 14, 15}, {16, 17, 18}};
 		skrivUt(speilet);
 		skrivUt(speile(a));
+		skrivUt(a);
+		skrivUt(b);
+		skrivUt(multipliser(a, b));
 	}
 
 	// a)
@@ -77,7 +77,7 @@ public class Matriser {
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 		boolean erLik = false;
-		
+
 		for (int i = 0; i < a.length; i++) {
 			for (int j = 0; j < b.length; j++) {
 				if (a[i][j] != b[j][i]) {
@@ -116,9 +116,15 @@ public class Matriser {
 
 	// f)
 	public static int[][] multipliser(int[][] a, int[][] b) {
-
-		// TODO
-		throw new UnsupportedOperationException("multipliser ikke implementert");
-
+		int[][] matrise = new int[a.length][b[0].length];
+		for(int i = 0; i < a[0].length; i++) {
+			for (int j = 0; j < b.length; j++) {
+				matrise[i][j] = 0;
+				for (int k = 0; k < a.length; k++) {
+					matrise[i][j] += a[i][k] * b[k][j];
+				}
+			}
+		}
+		return matrise;
 	}
 }
