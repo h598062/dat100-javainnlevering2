@@ -18,14 +18,21 @@ public class Matriser {
 		                    {0, 0, 1, 1, 1, 1, 0, 0},};
 
 		skrivUt(arr);
-		speile(matrise8);
+		skrivUt(matrise8);
+		skrivUt(speile(matrise8));
+
+		int[][] a       = {{1, 2, 3},
+		                   {4, 5, 6},
+		                   {7, 8, 9}};
+		int[][] speilet = {{1, 4, 7},
+		                   {2, 5, 8},
+		                   {3, 6, 9}};
+		skrivUt(speilet);
+		skrivUt(speile(a));
 	}
 
 	// a)
 	public static void skrivUt(int[][] matrise) {
-
-		// TODO
-		// throw new UnsupportedOperationException("skrivUt ikke implementert");
 		System.out.println("-------------------------------");
 
 		for (int[] rad : matrise) {
@@ -43,15 +50,11 @@ public class Matriser {
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
-
-		// TODO
-		// throw new UnsupportedOperationException("tilStreng ikke implementert");
 		StringBuilder out = new StringBuilder();
 		for (int[] tabell : matrise) {
 			for (int tall : tabell) {
 				out.append(tall);
 				out.append(" ");
-				;
 			}
 			out.append("\n");
 		}
@@ -61,9 +64,6 @@ public class Matriser {
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
-
-		// TODO
-		// throw new UnsupportedOperationException("skaler ikke implementert");
 		// ikke optimalt, denne bør finne ut lengden til hver av under arrays og sette hver lik ti ldenne lengden
 		int[][] nyMatrise = new int[matrise.length][matrise[0].length];
 		for (int i = 0; i < matrise.length; i++) {
@@ -76,10 +76,6 @@ public class Matriser {
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
-
-		// TODO
-		//throw new UnsupportedOperationException("erLik ikke implementert");
-		
 		boolean erLik = false;
 		
 		for (int i = 0; i < a.length; i++) {
@@ -91,17 +87,31 @@ public class Matriser {
 				}
 			}
 		}
-		
-		
 		return erLik;
 	}
 
 	// e)
 	public static int[][] speile(int[][] matrise) {
+		// forutsetter at alle del-tabeller er like store, noe som burde være et krav i en slik operasjon
+		int[][] speiletMatrise = new int[matrise.length][matrise[0].length];
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				speiletMatrise[j][i] = matrise[i][j];
+			}
+		}
+		return speiletMatrise;
+	}
 
-		// TODO
-		throw new UnsupportedOperationException("speile ikke implementert");
-
+	public static int[][] roterMedKlokken(int[][] matrise) {
+		// denne roterer, ikke speiler, oops
+		// forutsetter at alle del-tabeller er like store, noe som burde være et krav i en slik operasjon
+		int[][] speiletMatrise = new int[matrise.length][matrise[0].length];
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				speiletMatrise[j][matrise[i].length - 1 - i] = matrise[i][j];
+			}
+		}
+		return speiletMatrise;
 	}
 
 	// f)
